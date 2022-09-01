@@ -1,8 +1,10 @@
-module ShiftedProximalOperators
+#module ShiftedProximalOperators
 
 using ProximalOperators
 using Roots
 using LinearAlgebra
+#using LinearOperators
+include("/Users/joshuawolff/Documents/GERAD/src/LinearOperators.jl/src/LinearOperators.jl")
 
 export ShiftedProximableFunction
 export prox, prox!, set_radius!, shift!, shifted, set_bounds!, reshape_array
@@ -17,13 +19,13 @@ include("rootNormLhalf.jl")
 include("groupNormL2.jl")
 
 include("shiftedNormL0.jl")
-include("shiftedNormL0Box.jl")
+include("GeneralShiftedNormL0Box.jl")
 include("shiftedRootNormLhalf.jl")
 include("shiftedNormL1.jl")
 include("shiftedGroupNormL2.jl")
 
 include("shiftedNormL1B2.jl")
-include("shiftedNormL1Box.jl")
+include("GeneralShiftedNormL1Box.jl")
 include("shiftedIndBallL0.jl")
 include("shiftedIndBallL0BInf.jl")
 include("shiftedRootNormLhalfBinf.jl")
@@ -160,4 +162,4 @@ See the documentation of ProximalOperators.jl for more information.
 """
 shifted
 
-end # module
+#end # module
