@@ -1,4 +1,4 @@
-#module ShiftedProximalOperators
+module ShiftedProximalOperators
 
 using LinearAlgebra
 
@@ -176,4 +176,4 @@ See the documentation of ProximalOperators.jl for more information.
 """
 shifted
 
-#end # module
+end # module
