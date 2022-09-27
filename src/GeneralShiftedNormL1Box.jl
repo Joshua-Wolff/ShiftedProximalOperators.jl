@@ -76,13 +76,13 @@ function prox!(
     if i ∈ selected
       set = [-xi-si, li-si, ui-si]
       if δ > 0
-        if qi-ψ.λ/δ > -xi-si
-          append!(set,qi-ψ.λ/δ)
-        end
         if qi+ψ.λ/δ < -xi-si
           append!(set,qi+ψ.λ/δ)
         end
-      end
+        if qi-ψ.λ/δ > -xi-si
+          append!(set,qi-ψ.λ/δ)
+        end
+      end 
       set = set[li-si .<= set .<= ui-si .|| map(t -> isapprox(li-si, t, atol=eps(typeof(li))), set) .||  map(t -> isapprox(ui-si, t, atol=eps(typeof(ui))), set)]
       obj = map(t -> 1/2 * δ * (t - qi)^2 + ψ.h(xi + si + t), set)
       y[i] = set[argmin(obj)]
